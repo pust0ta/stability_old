@@ -28,11 +28,10 @@ $yuan_to_rub_rate = variable_get('gf_stock_yuan_exchange_rate');
 
 $current_region = $_SESSION['gf_stock_region'];
 
-$ru_price = round($row->gf_stock_prices_region_russia);
-$cn_price_yuan = round($row->gf_stock_prices_region_china);
-$cn_price = 0;
+$ru_price = isset($row->gf_stock_prices_region_russia) ? round($row->gf_stock_prices_region_russia) : 0;
+$cn_price_yuan = isset($row->gf_stock_prices_region_china) ? round($row->gf_stock_prices_region_china) : 0;
+$cn_price = ($cn_price_yuan > 0) ? round($cn_price_yuan * $yuan_to_rub_rate) : 0;
 
-if ($cn_price_yuan > 0) {$cn_price = round($cn_price_yuan * $yuan_to_rub_rate);}
 
 if ($current_region == $RU_CODE) {
   $current_code = $RU_CODE;
@@ -120,7 +119,7 @@ if ($discount_percent) {
         <span class="cn-in-stock">
           <?php
           print '<span>'. t("CN") .'</span><br>';
-          $cn_stock = $row->_field_data["nid"]["entity"]->gf_region_stock[$CN_CODE];
+          $cn_stock = $row->_field_data["nid"]["entity"]->gf_region_stock[$CN_CODE] ?? 0;
           if ($is_creator or $is_manager or $is_publicator or $is_admin) {
             print $cn_stock;
           } else {

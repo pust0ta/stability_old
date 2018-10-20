@@ -19,6 +19,7 @@ function stability_sub_preprocess_views_view_fields(&$vars) {
     (user_has_role(5)) ? $is_manager = TRUE : $is_manager = FALSE;
     (user_has_role(7)) ? $is_wholesaler = TRUE : $is_wholesaler = FALSE;
     (user_has_role(8)) ? $is_creator = TRUE : $is_creator = FALSE;
+    $extra_10 = FALSE;
     if (user_has_role(18)) {
       $is_man_sadovod = TRUE;
       $extra_10 = TRUE;
@@ -166,6 +167,8 @@ function stability_sub_preprocess_node(&$variables) {
   $variables['CN_CODE'] = $CN_CODE;
   $variables['current_region'] = $current_region;
   $variables['extra_10'] = $extra_10;
+  $variables['default_currency_code '] = variable_get('uc_currency_code', UC_CURRENCY_DEFAULT_CURRENCY);
+
 
 
   if ($current_region == $RU_CODE) {$variables['current_code'] = $RU_CODE; $variables['other_code'] = $CN_CODE; $variables['other_short_code'] = $CN_CODE;} else {
