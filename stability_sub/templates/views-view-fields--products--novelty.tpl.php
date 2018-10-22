@@ -129,8 +129,7 @@ $vote_enabled = FALSE;
         if ($curr_stock > 0 and $curr_stock < 10) {
           print $curr_stock;
         } elseif ($curr_stock >= 10) {
-          print '&gt;10'
-        }
+          print '&gt;10';
         } else {print '&#10007;';}
       }
     ?>
