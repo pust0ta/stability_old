@@ -1,10 +1,6 @@
 <?php
-
-if (isset($node) && $node->type == 'product') {
-  drupal_set_title(t('Product') . ' ' . $node->model);
-}
+if ($node && $node->type == 'product') {drupal_set_title(t('Product') . ' ' . $node->model);};
 $current_stock_region = isset($_SESSION['gf_stock_region']) ? $_SESSION['gf_stock_region'] : 'ru';
-
 ?>
 
 <header class="header header-default">
