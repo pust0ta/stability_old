@@ -1526,6 +1526,54 @@ padding-top: 24px;
 color: #6d6d6d;
 }
 
+.inv-form-description {
+	font-size: 1.2em;
+	color: #0b0b0b;
+}
+
+.promo-cat .project-item .project-item-inner {
+	background: transparent;
+}
+
+.promo-cat .alignnone img {
+	background-color: transparent;
+	border: none;
+}
+
+.promo-cat .products .product .project-desc {
+	text-align: center;
+}
+
+.promo-cat .price .amount {
+	color: orange;
+}
+
+.promo-cat .price del .amount {
+	color: #2f2f2f !important;
+}
+
+.view-parners-list .partner img {
+	width: 100%;
+	height: auto;
+}
+
+.view-parners-list .partner {
+	list-style: none;
+}
+
+.inv-form-description {
+	text-align: center;
+	font-size: 1.2em;
+	text-transform: uppercase;
+}
+
+.partners-desc h3 {
+color: orange;
+font-size: 1.5em;
+text-align: center;
+line-height: 3em;
+}
+
 .v-padding-off {
 padding-top: 28px;
 padding-bottom: 0;

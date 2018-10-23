@@ -102,7 +102,7 @@
               <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                   <?php
-                  $form_call_request = module_invoke('webform', 'block_view','client-block-135733');
+                  $form_call_request = module_invoke('webform', 'block_view','client-block-96967');
                   print render($form_call_request['content']);
                   ?>
                 </div>
@@ -152,7 +152,7 @@
         <div class="tab-content">
             <div id="tab-bags" class="tab-pane fade row in active">
               <?php
-                $bags_cat = implode('+', array(2764, 3553));
+                $bags_cat = implode('+', array(2764, 3553, 2756, 3550, 3629, 3630, 3646));
                 print views_embed_view('products', 'block_landing', $bags_cat);
               ?>
             </div>
@@ -190,9 +190,17 @@
       </div>
     </section>
     <div class="spacer"></div>
-    <section class="nd-region section-light v-padding-off">
-    <div class="l-grey-bg row map-title">
-      <h2>С нами работают:</h2>
+    <section class="nd-region section-light l-grey-bg v-padding-off">
+      <div class="container call-request-with-name">
+        <?php
+        $form_call_request_with_name = module_invoke('webform', 'block_view','client-block-96969');
+        print render ($form_call_request_with_name['content']);
+        ?>
+      </div>
+    </section>
+    <section class="nd-region section-dark h-outline">
+    <div class="container">
+      <div class="partners-desc"><h3>С нами работают:</h3></div>
     </div>
       <div class="row">
         <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A628b738e4efd85aeebdc362c573577f97444c269acd10667b56b2319ccc0a507&amp;width=100%&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
@@ -200,16 +208,10 @@
     </section>
     <section class="nd-region section-light l-grey-bg v-padding-off">
       <div class="container row">
-        <script id="bx24_form_inline" data-skip-moving="true">
-        (function(w,d,u,b){w['Bitrix24FormObject']=b;w[b] = w[b] || function(){arguments[0].ref=u;
-                (w[b].forms=w[b].forms||[]).push(arguments[0])};
-                if(w[b]['forms']) return;
-                var s=d.createElement('script');s.async=1;s.src=u+'?'+(1*new Date());
-                var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
-        })(window,document,'https://giorgioferretti.bitrix24.ru/bitrix/js/crm/form_loader.js','b24form');
-
-        b24form({"id":"7","lang":"ru","sec":"to2a8c","type":"inline"});
-</script> 
+        <?php
+        $form_subscribtion = module_invoke('webform', 'block_view','client-block-96970');
+        print render($form_subscribtion['content']);
+        ?>
       </div>
     </section>
   </div>
